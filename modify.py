@@ -1,6 +1,7 @@
 #/bin/sh
 #/usr/bin/env python
 
+# Change parameters to perform codes in ROS system
 with open('car_gogo_res34.py', 'rb+') as f:
     content = f.read()
     f.seek(0)
