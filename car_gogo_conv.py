@@ -18,12 +18,14 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Float64
 
+# Configure ROS system
 os.environ['ROS_IP'] = '10.42.0.1'
 bridge = CvBridge()
 #####
 weight_path = "/home/sis/ncsist_threat_processing/catkin_ws/src/bridge/src/checkpoint_acc_74_conv.pth"  ## pth format 
 #####
 
+# Network
 class Net(Module):   
     def __init__(self):
         super(Net,self).__init__()
