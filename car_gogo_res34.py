@@ -18,6 +18,7 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Float64
 
+# Configure ROS System
 os.environ['ROS_IP'] = '10.42.0.1'
 bridge = CvBridge()
 #####
