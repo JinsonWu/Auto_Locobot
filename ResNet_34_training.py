@@ -6,8 +6,10 @@ from torch.nn import CrossEntropyLoss
 from torch.autograd import Variable
 from torch.optim import Adam
 from utils import progress_bar
+# To enable system configuration
 #os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3'
 
+# Define ResNet34 overall structure
 class block(nn.Module):
     def __init__(
         self, in_channels, intermediate_channels, identity_downsample=None, stride=1
@@ -57,7 +59,7 @@ class block(nn.Module):
         x = self.relu(x)
         return x
 
-
+# Define Residual Unit
 class ResNet(nn.Module):
     def __init__(self, block, layers, image_channels, num_classes):
         super(ResNet, self).__init__()
@@ -133,6 +135,7 @@ class ResNet(nn.Module):
 
         return nn.Sequential(*layers)
 
+# Traning Procedure
 def train(epoch):
             
     for j, (x_train, y_train) in enumerate(train_loader):
@@ -158,7 +161,8 @@ def train(epoch):
         checkpoint = {'state_dict': model.state_dict(), 'optimizer': optimizer.state_dict()}
         save_checkpoint(checkpoint, filename="./res34_2/checkpoint_loss"+"_"+str(epoch)+".pth")
             
-        
+
+# Testing Procedure
 def test(epoch):
     global best_acc
     model.eval()
