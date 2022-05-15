@@ -1,4 +1,4 @@
-# Auto-Driving_Implementation_on_LOCOBOT
+# Auto-Driving Implementation on LOCOBOT
 Autonomous driving system is what people have dedicated to in past ten years. Nvidia and Tesla attempt to devise a absolutely non-manual driving experience on the road. Embedded systems application with Machine Learning algorithms are the mainstream in this domain. This project I utilized LOCOBOT with ROS system to implement auto-driving with the help of ResNet34. It in return achieved 85% of accuracy in 0.5sec response time. 
 
 ## Model Training
